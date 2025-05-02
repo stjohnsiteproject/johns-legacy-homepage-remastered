@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Header from '@/components/Header';
+import MainNavbar from '@/components/MainNavbar';
 import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs';
 import MottoVisionMission from '@/components/MottoVisionMission';
@@ -10,7 +10,7 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <MainNavbar />
       <main>
         <Hero />
         <AboutUs />

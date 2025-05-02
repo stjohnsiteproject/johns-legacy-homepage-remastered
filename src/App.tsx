@@ -13,6 +13,11 @@ import Contact from "./pages/Contact";
 import News from "./pages/News";
 import NotFound from "./pages/NotFound";
 
+// New About Routes
+import Founder from "./pages/about/Founder";
+import Anthem from "./pages/about/Anthem";
+import VisionMission from "./pages/about/VisionMission";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -29,6 +34,12 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
+          
+          {/* About section routes */}
+          <Route path="/about/founder" element={<Founder />} />
+          <Route path="/about/anthem" element={<Anthem />} />
+          <Route path="/about/vision-mission" element={<VisionMission />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
