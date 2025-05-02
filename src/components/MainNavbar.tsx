@@ -101,10 +101,8 @@ const MainNavbar = () => {
               <NavigationMenuList>
                 {/* Home Link */}
                 <NavigationMenuItem>
-                  <Link to="/" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Home
-                    </NavigationMenuLink>
+                  <Link to="/" className={navigationMenuTriggerStyle()}>
+                    Home
                   </Link>
                 </NavigationMenuItem>
 
@@ -115,14 +113,12 @@ const MainNavbar = () => {
                     <ul className="grid grid-cols-2 gap-3 p-4 w-[500px]">
                       {aboutUsLinks.map((link) => (
                         <li key={link.path} className="row-span-1">
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={link.path}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none">{link.name}</div>
-                            </Link>
-                          </NavigationMenuLink>
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -131,10 +127,8 @@ const MainNavbar = () => {
 
                 {/* Message Link */}
                 <NavigationMenuItem>
-                  <Link to="/message" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Message
-                    </NavigationMenuLink>
+                  <Link to="/message" className={navigationMenuTriggerStyle()}>
+                    Message
                   </Link>
                 </NavigationMenuItem>
 
@@ -145,14 +139,12 @@ const MainNavbar = () => {
                     <ul className="grid w-[400px] gap-3 p-4">
                       {schoolLinks.map((link) => (
                         <li key={link.path} className="row-span-1">
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={link.path}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            >
-                              <div className="text-sm font-medium leading-none">{link.name}</div>
-                            </Link>
-                          </NavigationMenuLink>
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -162,10 +154,8 @@ const MainNavbar = () => {
                 {/* Rest of the main menu items */}
                 {mainNavLinks.slice(1).map((link) => (
                   <NavigationMenuItem key={link.path}>
-                    <Link to={link.path} legacyBehavior passHref>
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        {link.name}
-                      </NavigationMenuLink>
+                    <Link to={link.path} className={navigationMenuTriggerStyle()}>
+                      {link.name}
                     </Link>
                   </NavigationMenuItem>
                 ))}
