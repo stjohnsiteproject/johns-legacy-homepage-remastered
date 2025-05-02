@@ -2,12 +2,9 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import WelcomeOverview from '@/components/WelcomeOverview';
-import PrincipalMessage from '@/components/PrincipalMessage';
+import AboutUs from '@/components/AboutUs';
 import MottoVisionMission from '@/components/MottoVisionMission';
-import CoreValues from '@/components/CoreValues';
-import LatestNews from '@/components/LatestNews';
-import CallToAction from '@/components/CallToAction';
+import AnnouncementsSection from '@/components/AnnouncementsSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -16,12 +13,9 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <WelcomeOverview />
-        <PrincipalMessage />
+        <AboutUs />
         <MottoVisionMission />
-        <CoreValues />
-        <LatestNews />
-        <CallToAction />
+        <AnnouncementsSection />
       </main>
       <Footer />
     </div>
