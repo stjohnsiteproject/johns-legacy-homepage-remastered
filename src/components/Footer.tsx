@@ -5,14 +5,11 @@ import {
   Book, 
   Users, 
   School, 
-  Award, 
   Calendar, 
   Mail, 
   Phone, 
   MapPin,
-  BookOpen,
   MapIcon,
-  User,
   Activity,
   Shield,
   MessageSquare
@@ -92,7 +89,7 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div className="md:col-span-1">
-            <h5 className="text-stjohns-navy font-bold mb-4 font-playfair border-b border-stjohns-gold pb-2">Contact Us</h5>
+            <h5 className="text-stjohns-navy font-bold mb-4 font-playfair border-b border-stjohns-gold pb-2">Connect With Us</h5>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-stjohns-navy mt-0.5 mr-2 flex-shrink-0" />

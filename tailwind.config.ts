@@ -65,7 +65,7 @@ export default {
 				},
 				// Custom colors for St. John's School
 				stjohns: {
-					navy: '#1A1F2C',
+					navy: '#1B264F',
 					gold: '#D4AF37',
 					offwhite: '#F8F8F8',
 				}
@@ -102,11 +102,20 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
+				'pan': {
+					'0%': {
+						transform: 'scale(1.02) translate(0%, 0%)'
+					},
+					'100%': {
+						transform: 'scale(1.08) translate(-1%, -1%)'
+					}
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out'
+				'fade-in': 'fade-in 0.5s ease-out',
+				'pan': 'pan 20s ease-in-out infinite alternate',
 			},
 			fontFamily: {
 				'playfair': ['"Playfair Display"', 'serif'],

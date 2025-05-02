@@ -5,16 +5,16 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative h-[60vh] md:h-[70vh] lg:h-screen">
-      {/* Background Image */}
-      <div className="absolute inset-0">
+    <section className="relative h-[70vh] md:h-[80vh] lg:h-screen">
+      {/* Background Image with Zoom Animation */}
+      <div className="absolute inset-0 overflow-hidden">
         <img 
           src="https://raw.githubusercontent.com/stjohnsiteproject/johns-legacy-homepage-remastered/main/public/images/100.jpg" 
           alt="St. John's High School Campus" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transform scale-[1.02] animate-[pan_20s_ease-in-out_infinite_alternate]"
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
       </div>
       
       {/* Hero Content */}

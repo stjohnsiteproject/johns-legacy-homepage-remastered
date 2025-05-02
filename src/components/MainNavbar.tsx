@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -53,6 +54,13 @@ const MainNavbar = () => {
     { name: 'PTA', path: '/about/pta' },
   ];
 
+  // Message dropdown items
+  const messageLinks = [
+    { name: 'Principal\'s Message', path: '/message/principal' },
+    { name: 'Headmistress\'s Message', path: '/message/headmistress' },
+    { name: 'President of School Council Message', path: '/message/president' },
+  ];
+
   // School dropdown items
   const schoolLinks = [
     { name: 'Activity Calendar', path: '/school/calendar' },
@@ -64,16 +72,55 @@ const MainNavbar = () => {
     { name: 'Booklist', path: '/school/booklist' },
   ];
   
-  // Main menu links
-  const mainNavLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Message', path: '/message' },
+  // Achievements dropdown items
+  const achievementsLinks = [
     { name: 'Achievements', path: '/achievements' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Publications', path: '/publications' },
-    { name: 'Alumni', path: '/alumni' },
-    { name: 'Job Opportunities', path: '/jobs' },
-    { name: 'Contact Us', path: '/contact' },
+    { name: 'Academic Achievements', path: '/achievements/academic' },
+    { name: 'Sports Achievements', path: '/achievements/sports' },
+    { name: 'CBSE Class X', path: '/achievements/cbse-x' },
+    { name: 'CBSE Class XII', path: '/achievements/cbse-xii' },
+  ];
+  
+  // Gallery dropdown items
+  const galleryLinks = [
+    { name: 'Photo Gallery', path: '/gallery/photos' },
+    { name: 'Assemblies', path: '/gallery/assemblies' },
+    { name: 'Activities', path: '/gallery/activities' },
+    { name: 'Media Gallery', path: '/gallery/media' },
+    { name: 'Vocational Activity', path: '/gallery/vocational' },
+    { name: 'Sports Activity', path: '/gallery/sports' },
+    { name: 'Community Service / Outreach', path: '/gallery/community' },
+  ];
+  
+  // Publications dropdown items
+  const publicationsLinks = [
+    { name: 'School Magazine', path: '/publications/magazine' },
+    { name: 'The Justice Newsdesk', path: '/publications/newsdesk' },
+    { name: 'Newsletter', path: '/publications/newsletter' },
+  ];
+  
+  // Alumni dropdown items
+  const alumniLinks = [
+    { name: 'SJOBA', path: '/alumni/sjoba' },
+  ];
+  
+  // Job Opportunities dropdown items
+  const jobsLinks = [
+    { name: 'Advertisement', path: '/jobs/advertisement' },
+    { name: 'Expectation of Teacher', path: '/jobs/expectations' },
+  ];
+  
+  // Contact Us dropdown items
+  const contactLinks = [
+    { name: 'Mail Us', path: '/contact/mail' },
+    { name: 'Join Us', path: '/contact/join' },
+    { name: 'Guest Book', path: '/contact/guest-book' },
+  ];
+  
+  // Downloads dropdown items
+  const downloadsLinks = [
+    { name: 'Forms', path: '/downloads/forms' },
+    { name: 'Circulars', path: '/downloads/circulars' },
   ];
 
   return (
@@ -98,7 +145,7 @@ const MainNavbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
             <NavigationMenu>
-              <NavigationMenuList>
+              <NavigationMenuList className="gap-0.5">
                 {/* Home Link */}
                 <NavigationMenuItem>
                   <Link to="/" className={navigationMenuTriggerStyle()}>
@@ -125,11 +172,23 @@ const MainNavbar = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Message Link */}
+                {/* Message Dropdown */}
                 <NavigationMenuItem>
-                  <Link to="/message" className={navigationMenuTriggerStyle()}>
-                    Message
-                  </Link>
+                  <NavigationMenuTrigger>Message</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {messageLinks.map((link) => (
+                        <li key={link.path} className="row-span-1">
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* School Dropdown */}
@@ -151,14 +210,138 @@ const MainNavbar = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Rest of the main menu items */}
-                {mainNavLinks.slice(1).map((link) => (
-                  <NavigationMenuItem key={link.path}>
-                    <Link to={link.path} className={navigationMenuTriggerStyle()}>
-                      {link.name}
-                    </Link>
-                  </NavigationMenuItem>
-                ))}
+                {/* Achievements Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Achievements</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {achievementsLinks.map((link) => (
+                        <li key={link.path} className="row-span-1">
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Gallery Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Gallery</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {galleryLinks.map((link) => (
+                        <li key={link.path} className="row-span-1">
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Publications Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Publications</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {publicationsLinks.map((link) => (
+                        <li key={link.path} className="row-span-1">
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Alumni Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Alumni</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {alumniLinks.map((link) => (
+                        <li key={link.path} className="row-span-1">
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Job Opportunities Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Job Opportunities</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {jobsLinks.map((link) => (
+                        <li key={link.path} className="row-span-1">
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Contact Us Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Contact Us</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {contactLinks.map((link) => (
+                        <li key={link.path} className="row-span-1">
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* Downloads Dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Downloads</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4">
+                      {downloadsLinks.map((link) => (
+                        <li key={link.path} className="row-span-1">
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{link.name}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </nav>
@@ -176,7 +359,7 @@ const MainNavbar = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="lg:hidden bg-white border-t border-gray-100 py-4">
+        <nav className="lg:hidden bg-white border-t border-gray-100 py-4 max-h-[85vh] overflow-y-auto">
           <div className="container-custom">
             <ul className="space-y-4">
               {/* Home Link */}
@@ -213,15 +396,27 @@ const MainNavbar = () => {
                 </details>
               </li>
               
-              {/* Message Link */}
+              {/* Message Section with nested links */}
               <li>
-                <Link
-                  to="/message"
-                  className="block text-stjohns-navy hover:text-stjohns-gold transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Message
-                </Link>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center justify-between text-stjohns-navy font-medium hover:text-stjohns-gold transition-colors duration-200">
+                    Message
+                    <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="mt-2 space-y-2 pl-4 border-l border-gray-100">
+                    {messageLinks.map((link) => (
+                      <li key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="block text-gray-600 hover:text-stjohns-gold transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
               </li>
               
               {/* School Section with nested links */}
@@ -247,18 +442,166 @@ const MainNavbar = () => {
                 </details>
               </li>
               
-              {/* Rest of the main menu items */}
-              {mainNavLinks.slice(1).map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="block text-stjohns-navy hover:text-stjohns-gold transition-colors duration-200 font-medium"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              {/* Achievements Section with nested links */}
+              <li>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center justify-between text-stjohns-navy font-medium hover:text-stjohns-gold transition-colors duration-200">
+                    Achievements
+                    <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="mt-2 space-y-2 pl-4 border-l border-gray-100">
+                    {achievementsLinks.map((link) => (
+                      <li key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="block text-gray-600 hover:text-stjohns-gold transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+              
+              {/* Gallery Section with nested links */}
+              <li>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center justify-between text-stjohns-navy font-medium hover:text-stjohns-gold transition-colors duration-200">
+                    Gallery
+                    <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="mt-2 space-y-2 pl-4 border-l border-gray-100">
+                    {galleryLinks.map((link) => (
+                      <li key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="block text-gray-600 hover:text-stjohns-gold transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+              
+              {/* Publications Section with nested links */}
+              <li>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center justify-between text-stjohns-navy font-medium hover:text-stjohns-gold transition-colors duration-200">
+                    Publications
+                    <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="mt-2 space-y-2 pl-4 border-l border-gray-100">
+                    {publicationsLinks.map((link) => (
+                      <li key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="block text-gray-600 hover:text-stjohns-gold transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+              
+              {/* Alumni Section with nested links */}
+              <li>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center justify-between text-stjohns-navy font-medium hover:text-stjohns-gold transition-colors duration-200">
+                    Alumni
+                    <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="mt-2 space-y-2 pl-4 border-l border-gray-100">
+                    {alumniLinks.map((link) => (
+                      <li key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="block text-gray-600 hover:text-stjohns-gold transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+              
+              {/* Job Opportunities Section with nested links */}
+              <li>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center justify-between text-stjohns-navy font-medium hover:text-stjohns-gold transition-colors duration-200">
+                    Job Opportunities
+                    <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="mt-2 space-y-2 pl-4 border-l border-gray-100">
+                    {jobsLinks.map((link) => (
+                      <li key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="block text-gray-600 hover:text-stjohns-gold transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+              
+              {/* Contact Us Section with nested links */}
+              <li>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center justify-between text-stjohns-navy font-medium hover:text-stjohns-gold transition-colors duration-200">
+                    Contact Us
+                    <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="mt-2 space-y-2 pl-4 border-l border-gray-100">
+                    {contactLinks.map((link) => (
+                      <li key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="block text-gray-600 hover:text-stjohns-gold transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+              
+              {/* Downloads Section with nested links */}
+              <li>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center justify-between text-stjohns-navy font-medium hover:text-stjohns-gold transition-colors duration-200">
+                    Downloads
+                    <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <ul className="mt-2 space-y-2 pl-4 border-l border-gray-100">
+                    {downloadsLinks.map((link) => (
+                      <li key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="block text-gray-600 hover:text-stjohns-gold transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
             </ul>
           </div>
         </nav>
