@@ -19,6 +19,7 @@ import Anthem from "./pages/about/Anthem";
 import VisionMission from "./pages/about/VisionMission";
 import School from "./pages/about/School";
 import BriefHistory from "./pages/about/BriefHistory";
+import Ethos from "./pages/about/Ethos";
 
 const queryClient = new QueryClient();
 
@@ -44,7 +45,7 @@ const App = () => (
           <Route path="/about/vision-mission" element={<VisionMission />} />
           <Route path="/about/school" element={<School />} />
           <Route path="/about/history" element={<BriefHistory />} />
-          <Route path="/about/ethos" element={<NotFound />} />
+          <Route path="/about/ethos" element={<Ethos />} />
           <Route path="/about/spirit" element={<NotFound />} />
           <Route path="/about/information" element={<NotFound />} />
           <Route path="/about/child-safety" element={<NotFound />} />
