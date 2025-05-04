@@ -20,6 +20,10 @@ import VisionMission from "./pages/about/VisionMission";
 import School from "./pages/about/School";
 import BriefHistory from "./pages/about/BriefHistory";
 import Ethos from "./pages/about/Ethos";
+import SchoolInformation from "./pages/about/SchoolInformation";
+import ChildSafety from "./pages/about/ChildSafety";
+import RoutePlan from "./pages/about/RoutePlan";
+import Facilities from "./pages/about/Facilities";
 
 const queryClient = new QueryClient();
 
@@ -46,11 +50,11 @@ const App = () => (
           <Route path="/about/school" element={<School />} />
           <Route path="/about/history" element={<BriefHistory />} />
           <Route path="/about/ethos" element={<Ethos />} />
+          <Route path="/about/information" element={<SchoolInformation />} />
+          <Route path="/about/child-safety" element={<ChildSafety />} />
+          <Route path="/about/route-plan" element={<RoutePlan />} />
+          <Route path="/about/facilities" element={<Facilities />} />
           <Route path="/about/spirit" element={<NotFound />} />
-          <Route path="/about/information" element={<NotFound />} />
-          <Route path="/about/child-safety" element={<NotFound />} />
-          <Route path="/about/route-plan" element={<NotFound />} />
-          <Route path="/about/facilities" element={<NotFound />} />
           <Route path="/about/transactions" element={<NotFound />} />
           <Route path="/about/ex-principals" element={<NotFound />} />
           <Route path="/about/faculty" element={<NotFound />} />
