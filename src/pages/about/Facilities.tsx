@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { 
   Building,
   Laptop, 
-  Flask, 
+  BeakerIcon, 
   BookOpen, 
   Trophy, 
   Music2,
@@ -27,7 +26,7 @@ const Facilities = () => {
     {
       title: "Science Labs",
       description: "State-of-the-art physics, chemistry, and biology laboratories with modern equipment for practical experiments",
-      icon: <Flask className="h-10 w-10 text-stjohns-navy" />
+      icon: <BeakerIcon className="h-10 w-10 text-stjohns-navy" />
     },
     {
       title: "Library",
