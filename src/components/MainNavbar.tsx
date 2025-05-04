@@ -31,17 +31,16 @@ const MainNavbar = () => {
     <header className={`bg-white shadow-sm sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
       <div className="container-custom">
         <div className="flex items-center justify-between">
-          {/* Logo and School Name */}
-          <div className="flex items-center">
+          {/* Logo and School Name - Updated layout */}
+          <div className="flex items-center gap-3 md:gap-4">
             <img 
               src="https://raw.githubusercontent.com/stjohnsiteproject/johns-legacy-homepage-remastered/main/public/images/logo.png" 
               alt="St. John's High School Crest" 
               className={`transition-all duration-300 ${scrolled ? 'h-12' : 'h-16'}`}
             />
-            <div className="ml-3 md:ml-4">
+            <div>
               <h1 className={`text-stjohns-navy font-bold font-playfair leading-tight transition-all duration-300 ${scrolled ? 'text-lg' : 'text-xl'}`}>
-                St. John's High School
-                <span className="block text-sm font-normal">Chandigarh</span>
+                St. John's High School Chandigarh
               </h1>
             </div>
           </div>
