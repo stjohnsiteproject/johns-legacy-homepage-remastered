@@ -119,3 +119,18 @@
 .gold-separator {
   @apply h-1 bg-stjohns-gold max-w-[100px] mx-auto;
 }
+
+/* Animation classes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes pan {
+  from { transform: scale(1.02) translate(0, 0); }
+  to { transform: scale(1.08) translate(-2%, -1%); }
+}

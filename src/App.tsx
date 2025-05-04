@@ -17,6 +17,8 @@ import NotFound from "./pages/NotFound";
 import Founder from "./pages/about/Founder";
 import Anthem from "./pages/about/Anthem";
 import VisionMission from "./pages/about/VisionMission";
+import School from "./pages/about/School";
+import BriefHistory from "./pages/about/BriefHistory";
 
 const queryClient = new QueryClient();
 
@@ -40,8 +42,8 @@ const App = () => (
           <Route path="/about/founder" element={<Founder />} />
           <Route path="/about/anthem" element={<Anthem />} />
           <Route path="/about/vision-mission" element={<VisionMission />} />
-          <Route path="/about/school" element={<NotFound />} />
-          <Route path="/about/history" element={<NotFound />} />
+          <Route path="/about/school" element={<School />} />
+          <Route path="/about/history" element={<BriefHistory />} />
           <Route path="/about/ethos" element={<NotFound />} />
           <Route path="/about/spirit" element={<NotFound />} />
           <Route path="/about/information" element={<NotFound />} />
